@@ -1,0 +1,17 @@
+/* Navbar responsive supplement */
+@media (max-width: 768px) {
+  .navbar {
+    padding: 1rem 1.5rem;
+    flex-wrap: wrap;
+    gap: 0.8rem;
+  }
+
+  .navbar-links {
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+
+  .navbar-links a {
+    font-size: 0.8rem;
+  }
+}

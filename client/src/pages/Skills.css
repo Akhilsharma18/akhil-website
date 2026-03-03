@@ -1,0 +1,80 @@
+.skills-page {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding-left: 2rem;
+  padding-right: 2rem;
+}
+
+.skills-sections {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+}
+
+.skills-section {
+  background: #050505;
+  border: 1px solid rgba(0, 255, 0, 0.3);
+  border-radius: 16px;
+  padding: 2.5rem;
+}
+
+.skills-section-header {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.skills-section-icon {
+  font-size: 1.8rem;
+}
+
+.skills-section-title {
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: var(--green);
+  text-shadow: 0 0 10px rgba(0, 255, 0, 0.4);
+}
+
+.skills-items-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+  gap: 1.2rem;
+}
+
+.skill-item-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.7rem;
+  background: #0a0a0a;
+  border: 1px solid rgba(0, 255, 0, 0.4);
+  border-radius: 12px;
+  padding: 1.6rem 1rem;
+  cursor: default;
+  transition: border-color 0.3s ease;
+}
+
+.skill-item-box:hover {
+  border-color: var(--green);
+}
+
+.skill-badge {
+  font-size: 0.8rem;
+  font-weight: 800;
+  font-family: 'Courier New', monospace;
+  color: var(--green);
+  background: rgba(0, 255, 0, 0.06);
+  padding: 0.3rem 0.7rem;
+  border-radius: 6px;
+  letter-spacing: 1px;
+  border: 1px solid rgba(0, 255, 0, 0.2);
+}
+
+.skill-label {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--white);
+  text-align: center;
+}

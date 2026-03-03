@@ -1,0 +1,68 @@
+.tools-page {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding-left: 2rem;
+  padding-right: 2rem;
+}
+
+.tools-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1.8rem;
+}
+
+.tool-card {
+  display: block;
+  text-decoration: none;
+  background: #080808;
+  border: 1px solid rgba(0, 255, 0, 0.3);
+  border-radius: 16px;
+  padding: 2rem;
+  position: relative;
+  overflow: hidden;
+  transition: box-shadow 0.3s ease;
+}
+
+.tool-card:hover {
+  box-shadow: 0 0 30px rgba(0, 255, 0, 0.35);
+}
+
+.tool-icon-row {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.tool-emoji {
+  font-size: 2rem;
+}
+
+.tool-name {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: var(--green);
+  flex: 1;
+}
+
+.tool-visit {
+  font-size: 0.85rem;
+  color: rgba(0, 255, 0, 0.6);
+}
+
+.tool-desc {
+  font-size: 0.95rem;
+  color: rgba(255, 255, 255, 0.7);
+  line-height: 1.7;
+  margin-bottom: 1.5rem;
+}
+
+.tool-bar {
+  height: 3px;
+  border-radius: 2px;
+  opacity: 0.4;
+}
+
+.tool-card:hover .tool-bar {
+  opacity: 0.8;
+}
