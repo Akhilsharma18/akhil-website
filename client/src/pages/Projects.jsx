@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import axios from 'axios';
+import API_BASE from '../api';
 import './Projects.css';
 
 const pageVariants = {
@@ -30,7 +31,7 @@ function Projects() {
   const [projects, setProjects] = useState(FALLBACK_PROJECTS);
 
   useEffect(() => {
-    axios.get('/api/projects')
+    axios.get(`${API_BASE}/api/projects`)
       .then(res => { if (res.data?.length > 0) setProjects(res.data); })
       .catch(() => { });
   }, []);

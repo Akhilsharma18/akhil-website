@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import axios from 'axios';
+import API_BASE from '../api';
 import './Skills.css';
 
 const pageVariants = {
@@ -31,7 +32,7 @@ function Skills() {
   const [skills, setSkills] = useState(FALLBACK_SKILLS);
 
   useEffect(() => {
-    axios.get('/api/skills')
+    axios.get(`${API_BASE}/api/skills`)
       .then(res => { if (res.data?.length > 0) setSkills(res.data); })
       .catch(() => { });
   }, []);

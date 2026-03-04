@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import axios from 'axios';
+import API_BASE from '../api';
 import './About.css';
 
 const pageVariants = {
@@ -58,7 +59,7 @@ function About() {
   const [links, setLinks] = useState(FALLBACK_LINKS);
 
   useEffect(() => {
-    axios.get('/api/links')
+    axios.get(`${API_BASE}/api/links`)
       .then(res => {
         if (res.data && res.data.length > 0) {
           setLinks(res.data.map(l => ({

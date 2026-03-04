@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import axios from 'axios';
+import API_BASE from '../api';
 import './Contact.css';
 
 const pageVariants = {
@@ -28,7 +29,7 @@ function Contact() {
   const [contact, setContact] = useState(FALLBACK_CONTACT);
 
   useEffect(() => {
-    axios.get('/api/contact')
+    axios.get(`${API_BASE}/api/contact`)
       .then(res => { if (res.data) setContact(res.data); })
       .catch(() => { });
   }, []);
