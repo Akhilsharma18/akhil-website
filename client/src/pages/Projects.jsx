@@ -19,9 +19,9 @@ const FALLBACK_PROJECTS = [
     tags: ['React', 'Node.js', 'MongoDB'],
   },
   {
-    title: 'Yojna Mitra',
+    title: 'government schemes',
     description: 'A platform that helps citizens discover and apply for government schemes easily, bridging the gap between people and welfare programs.',
-    github: 'https://github.com/Akhilsharma18/yojna-mitr',
+  
     live: '',
     tags: ['React', 'Express', 'MongoDB'],
   },
