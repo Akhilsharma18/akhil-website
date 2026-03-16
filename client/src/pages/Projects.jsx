@@ -18,7 +18,14 @@ const FALLBACK_PROJECTS = [
     live: 'https://jkbosepro.vercel.app',
     tags: ['React', 'Node.js', 'MongoDB'],
   },
+  {
+    title: 'progress tracker',
+    
   
+    live: '',
+    tags: ['React', 'Express', 'MongoDB'],
+  },
+];
 
 function Projects() {
   const [projects, setProjects] = useState(FALLBACK_PROJECTS);
