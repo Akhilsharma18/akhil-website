@@ -19,9 +19,8 @@ const FALLBACK_PROJECTS = [
     tags: ['React', 'Node.js', 'MongoDB'],
   },
   {
-    title: 'government schemes platform',
+    title: 'progress tracker',
     description: 'A platform that helps citizens discover and apply for government schemes easily, bridging the gap between people and welfare programs.',
-    
     live: '',
     tags: ['React', 'Express', 'MongoDB'],
   },
