@@ -18,14 +18,7 @@ const FALLBACK_PROJECTS = [
     live: 'https://jkbosepro.vercel.app',
     tags: ['React', 'Node.js', 'MongoDB'],
   },
-  {
-    title: 'government schemes',
-    description: 'A platform that helps citizens discover and apply for government schemes easily, bridging the gap between people and welfare programs.',
   
-    live: '',
-    tags: ['React', 'Express', 'MongoDB'],
-  },
-];
 
 function Projects() {
   const [projects, setProjects] = useState(FALLBACK_PROJECTS);
