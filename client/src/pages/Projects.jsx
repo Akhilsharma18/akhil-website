@@ -20,9 +20,7 @@ const FALLBACK_PROJECTS = [
   },
   {
     title: 'progress tracker',
-    
-  
-    live: '',
+   live: '',
     tags: ['React', 'Express', 'MongoDB'],
   },
 ];
