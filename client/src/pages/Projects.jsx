@@ -20,7 +20,7 @@ const FALLBACK_PROJECTS = [
   },
   {
     title: 'progress tracker',
-    description: 'A platform that helps citizens discover and apply for government schemes easily, bridging the gap between people and welfare programs.',
+    description: '',
     live: '',
     tags: ['React', 'Express', 'MongoDB'],
   },
