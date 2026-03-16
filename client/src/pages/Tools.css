@@ -7,7 +7,7 @@
 
 .tools-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
   gap: 1.8rem;
 }
 
@@ -65,4 +65,26 @@
 
 .tool-card:hover .tool-bar {
   opacity: 0.8;
+}
+
+/* ── Mobile ── */
+@media (max-width: 768px) {
+  .tools-page {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  .tools-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .tool-card {
+    padding: 1.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .tool-name {
+    font-size: 1.1rem;
+  }
 }

@@ -78,3 +78,34 @@
   color: var(--white);
   text-align: center;
 }
+
+/* ── Mobile ── */
+@media (max-width: 768px) {
+  .skills-page {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  .skills-section {
+    padding: 1.5rem 1.2rem;
+  }
+
+  .skills-items-grid {
+    grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+    gap: 0.9rem;
+  }
+
+  .skill-item-box {
+    padding: 1.2rem 0.8rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .skills-items-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .skills-section-title {
+    font-size: 1.3rem;
+  }
+}

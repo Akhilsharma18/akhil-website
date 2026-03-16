@@ -401,13 +401,13 @@
 
 @media (max-width: 768px) {
   .about-page {
-    padding-left: 1.5rem;
-    padding-right: 1.5rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
   }
 
   .about-top {
     grid-template-columns: 1fr;
-    gap: 3rem;
+    gap: 2rem;
   }
 
   .about-photo-box,
@@ -418,7 +418,22 @@
 
   .achievements-box {
     width: 100%;
-    min-height: 300px;
+    min-height: 280px;
+  }
+
+  /* On touch screens (no hover), always show the gallery */
+  .achievements-gallery {
+    opacity: 1;
+  }
+
+  .globe {
+    width: 200px;
+    height: 200px;
+  }
+
+  .globe-bio {
+    padding: 1rem 1.2rem;
+    font-size: 0.9rem;
   }
 }
 
@@ -434,5 +449,14 @@
 
   .globe-wrapper.expanded .globe {
     transform: scale(1.1);
+  }
+
+  .profile-card {
+    padding: 1rem 1.2rem;
+    font-size: 0.9rem;
+  }
+
+  .achievements-gallery img {
+    height: 140px;
   }
 }
