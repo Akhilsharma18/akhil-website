@@ -1,4 +1,45 @@
-/* Navbar.css — Desktop + Mobile responsive */
+/* =============================================
+   Navbar.css — Desktop + Mobile responsive
+   ============================================= */
+
+/* ── Desktop nav links (inside <nav>) ── */
+.navbar-links-desktop {
+  display: flex;
+  gap: 2rem;
+  list-style: none;
+}
+
+.navbar-links-desktop a {
+  color: var(--white);
+  font-size: 0.95rem;
+  font-weight: 500;
+  position: relative;
+  padding-bottom: 4px;
+  letter-spacing: 0.5px;
+  transition: color 0.3s ease;
+}
+
+.navbar-links-desktop a::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 0;
+  height: 2px;
+  background: var(--green);
+  box-shadow: var(--green-glow);
+  transition: width 0.3s ease;
+}
+
+.navbar-links-desktop a:hover,
+.navbar-links-desktop a.active {
+  color: var(--green);
+}
+
+.navbar-links-desktop a:hover::after,
+.navbar-links-desktop a.active::after {
+  width: 100%;
+}
 
 /* ── Hamburger button (hidden on desktop) ── */
 .hamburger {
@@ -11,7 +52,8 @@
   border: none;
   cursor: pointer;
   padding: 0;
-  z-index: 200;
+  z-index: 300;
+  position: relative;
 }
 
 .hamburger span {
@@ -24,7 +66,7 @@
   box-shadow: 0 0 6px rgba(0, 255, 0, 0.5);
 }
 
-/* Animate into X when open */
+/* Animate hamburger into X when open */
 .hamburger.open span:nth-child(1) {
   transform: translateY(9px) rotate(45deg);
 }
@@ -37,64 +79,88 @@
   transform: translateY(-9px) rotate(-45deg);
 }
 
-/* ── Overlay behind the mobile menu ── */
+/* ── Mobile full-screen menu (sibling of <nav>) ── */
+.mobile-menu {
+  display: none;
+}
+
+/* ── Overlay backdrop ── */
 .nav-overlay {
   display: none;
 }
 
-/* ── Mobile breakpoint ── */
+/* =============================================
+   MOBILE — ≤768px
+   ============================================= */
 @media (max-width: 768px) {
-  .navbar {
-    padding: 1rem 1.5rem;
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    z-index: 100;
+
+  /* Hide desktop links */
+  .navbar-links-desktop {
+    display: none;
   }
 
+  /* Show hamburger */
   .hamburger {
     display: flex;
   }
 
-  /* Slide-down full-width menu */
-  .navbar-links {
+  /* Full-screen slide-in menu — sits outside <nav> so backdrop-filter doesn't clip it */
+  .mobile-menu {
+    display: flex;
     position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
+    inset: 0;
+    z-index: 200;
     background: rgba(0, 0, 0, 0.97);
-    flex-direction: column;
     justify-content: center;
     align-items: center;
-    gap: 2.5rem;
-    list-style: none;
-    z-index: 150;
-    /* hidden by default */
+
+    /* Hidden by default */
     opacity: 0;
     pointer-events: none;
-    transform: translateY(-20px);
+    transform: translateY(-16px);
     transition: opacity 0.3s ease, transform 0.3s ease;
   }
 
-  .navbar-links.nav-open {
+  .mobile-menu.mobile-menu-open {
     opacity: 1;
     pointer-events: auto;
     transform: translateY(0);
   }
 
-  .navbar-links a {
-    font-size: 1.4rem;
-    letter-spacing: 2px;
-    font-weight: 600;
+  .mobile-menu ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2.5rem;
+    padding: 0;
+    margin: 0;
   }
 
-  /* Overlay */
+  .mobile-menu a {
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: var(--white);
+    letter-spacing: 2px;
+    transition: color 0.3s ease;
+  }
+
+  .mobile-menu a:hover,
+  .mobile-menu a.active {
+    color: var(--green);
+    text-shadow: 0 0 10px rgba(0, 255, 0, 0.6);
+  }
+
+  /* Overlay behind menu (above page, below menu) */
   .nav-overlay {
     display: block;
     position: fixed;
     inset: 0;
-    z-index: 140;
+    z-index: 190;
+  }
+
+  /* Ensure hamburger stays on top of the mobile menu */
+  .navbar {
+    z-index: 250;
   }
 }

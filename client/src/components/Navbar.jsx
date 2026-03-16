@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { NavLink } from 'react-router-dom';
 import './Navbar.css';
 
@@ -16,40 +16,66 @@ function Navbar() {
 
   const closeMenu = () => setOpen(false);
 
+  // Prevent body scroll when menu is open
+  useEffect(() => {
+    document.body.style.overflow = open ? 'hidden' : '';
+    return () => { document.body.style.overflow = ''; };
+  }, [open]);
+
   return (
-    <nav className="navbar">
-      <span className="navbar-brand">{'<AS />'}</span>
+    <>
+      {/* Main navbar bar */}
+      <nav className="navbar">
+        <span className="navbar-brand">{'<AS />'}</span>
 
-      {/* Hamburger button — only visible on mobile */}
-      <button
-        className={`hamburger ${open ? 'open' : ''}`}
-        onClick={() => setOpen((o) => !o)}
-        aria-label="Toggle navigation"
-      >
-        <span />
-        <span />
-        <span />
-      </button>
+        {/* Desktop links — hidden on mobile */}
+        <ul className="navbar-links-desktop">
+          {links.map((l) => (
+            <li key={l.to}>
+              <NavLink
+                to={l.to}
+                end={l.to === '/'}
+                className={({ isActive }) => (isActive ? 'active' : '')}
+              >
+                {l.label}
+              </NavLink>
+            </li>
+          ))}
+        </ul>
 
-      {/* Nav links — slide in on mobile */}
-      <ul className={`navbar-links ${open ? 'nav-open' : ''}`}>
-        {links.map((l) => (
-          <li key={l.to}>
-            <NavLink
-              to={l.to}
-              end={l.to === '/'}
-              className={({ isActive }) => (isActive ? 'active' : '')}
-              onClick={closeMenu}
-            >
-              {l.label}
-            </NavLink>
-          </li>
-        ))}
-      </ul>
+        {/* Hamburger button — only visible on mobile */}
+        <button
+          className={`hamburger ${open ? 'open' : ''}`}
+          onClick={() => setOpen((o) => !o)}
+          aria-label="Toggle navigation"
+        >
+          <span />
+          <span />
+          <span />
+        </button>
+      </nav>
 
-      {/* Overlay to close menu when tapping outside */}
+      {/* Mobile full-screen menu — outside <nav> so backdrop-filter doesn't clip it */}
+      <div className={`mobile-menu ${open ? 'mobile-menu-open' : ''}`} aria-hidden={!open}>
+        <ul>
+          {links.map((l) => (
+            <li key={l.to}>
+              <NavLink
+                to={l.to}
+                end={l.to === '/'}
+                className={({ isActive }) => (isActive ? 'active' : '')}
+                onClick={closeMenu}
+              >
+                {l.label}
+              </NavLink>
+            </li>
+          ))}
+        </ul>
+      </div>
+
+      {/* Overlay backdrop */}
       {open && <div className="nav-overlay" onClick={closeMenu} />}
-    </nav>
+    </>
   );
 }
 
