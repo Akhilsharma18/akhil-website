@@ -152,8 +152,7 @@ function About() {
             </div>
             <div className="achievements-gallery">
               <img src="/leetcode.png" alt="Highlight 1" />
-              <img src="/virat.png" alt="Highlight 2" />
-              <img src="/mait.png" alt="Highlight 3" />
+           <img src="/mait.png" alt="Highlight 3" />
               <img src="/streak.png" alt="Highlight 4" />
             </div>
           </div>
