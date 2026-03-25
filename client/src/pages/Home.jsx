@@ -14,7 +14,7 @@ function Home() {
   const navigate = useNavigate();
   const [termInput, setTermInput] = useState('');
   const [termHistory, setTermHistory] = useState([
-    'Type "virat kohli" and press enter to see something cool!',
+    'Type "npm run" and press enter!',
 
   ]);
 
@@ -26,7 +26,7 @@ function Home() {
     const newHistory = [...termHistory, `> ${cmd}`];
 
     switch (cmd) {
-      case 'virat kohli':
+      case 'npm run':
         newHistory.push('Available commands:');
         newHistory.push('  home     - Go to Home page');
         newHistory.push('  about    - Go to About page');
@@ -59,7 +59,7 @@ function Home() {
         setTermInput('');
         return;
       default:
-        newHistory.push(`Command not found: ${cmd}. Type "virat kohli"  to see something cool!`);
+        newHistory.push(`Command not found: ${cmd}. Type "npm run " & press enter!`);
     }
 
     setTermHistory(newHistory);
